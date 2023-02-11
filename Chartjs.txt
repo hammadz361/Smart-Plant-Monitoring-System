@@ -1,0 +1,333 @@
+// public ChartPie(_value?: string): ApiResponse<IChart>{
+//   var Response: ApiResponse<IChart> = {} as ApiResponse<IChart>;
+//   var PieChart = new IChart();
+//   PieChart.DataSets = [{
+//     label: '# of Votes',
+//     data: [12, 19, 3, 5, 2, 3],
+//     backgroundColor: [
+//         'rgba(255, 99, 132, 0.2)',
+//         'rgba(54, 162, 235, 0.2)',
+//         'rgba(255, 206, 86, 0.2)',
+//         'rgba(75, 192, 192, 0.2)',
+//         'rgba(153, 102, 255, 0.2)',
+//         'rgba(255, 159, 64, 0.2)'
+//     ],
+//     borderColor: [
+//         'rgba(255, 99, 132, 1)',
+//         'rgba(54, 162, 235, 1)',
+//         'rgba(255, 206, 86, 1)',
+//         'rgba(75, 192, 192, 1)',
+//         'rgba(153, 102, 255, 1)',
+//         'rgba(255, 159, 64, 1)'
+//     ],
+//     borderWidth: 1
+//   }];
+//   PieChart.Labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+//   PieChart.Options = {
+//     legend: {
+//       labels: {
+//         fontColor: 'White'
+//       }
+//     },
+//   };
+//   PieChart.Type = 'pie';
+//   Response.message = "Successfull";
+//   Response.response = PieChart;
+//   Response.success = true;
+//   return Response;
+// }
+// public ChartLine(_value?: string): ApiResponse<IChart>{
+//   var Response: ApiResponse<IChart> = {} as ApiResponse<IChart>;
+//   var LineChart = new IChart();
+//   LineChart.DataSets = [
+//     {
+//     label: 'Looping tension',
+//     data: [65, 59, 80, 81, 26, 55, 40, 65, 59, 80, 81, 26, 55, 
+//            40, 65, 59, 80, 81, 26, 55, 40, 65, 59, 80, 81, 26, 55, 40, 90],
+//     fill: true,
+//     backgroundColor: 'rgba(60, 179, 113, 0.2)',
+//     borderColor: 'rgb(60, 179, 113)',
+//     pointBackgroundColor: "rgba(255, 89, 114, 1)",
+//     pointHoverBackgroundColor: "rgba(151,187,205,1)"
+//   },
+//   {
+//     label: 'Looping tension 2nd',
+//     data: [10, 20, -30, 40, 81, 26, 55, 40, 90, 10, 20, 30, 
+//            40, 10, 20, 30, 40, 81, 26, 55, 40, 90, 10, 20, 30, -40],
+//     fill: true,
+//     backgroundColor: (context: any) => context.datasetIndex > 0 ? 'rgba(60, 179, 113, 0.2)' : 'Red',
+//     borderColor: 'rgb(60, 179, 113)',
+//     pointBackgroundColor: "rgba(255, 89, 114, 1)",
+//     pointHoverBackgroundColor: "rgba(151,187,205,1)"
+//   }
+// ];
+//   LineChart.Labels = ['0', '10', '20', '30', '40', '50', '60', '70', 
+//                       '80', '90', '100', '0', '10', '20', '30', '40', 
+//                       '50', '60', '70', '80', '90', '100', '20', '30', 
+//                       '40', '50', '60', '70', '80', '90', '100'];
+//   LineChart.Options = {
+    
+//     legend: {
+//       labels: {
+//         fontColor: 'white'
+//       }
+//     },
+//     scales: {
+//       yAxes: [{
+//         ticks: {
+//           fontColor: 'White',
+//           beginAtZero: true,
+//           stepSize: 30,
+//           callback: function (value: string, _index: any, _values: any) {
+//             return value + "%";
+//           }
+//         },
+//       }],
+//       xAxes: [{
+//         ticks: {
+//           fontColor: 'White',
+//           beginAtZero: true,
+//           stepSize: 30,
+//           callback: function (value: string, _index: any, _values: any) {
+//             return value + "%";
+//           },
+//         }
+//       }]
+//     },
+//     plugins: {
+//       variableLineColor: {
+//         thresholds: [0, 115, 125],
+//         colors: ["green", "yellow", "red"]
+//       }
+//     }
+//   };
+//   LineChart.Type = 'line';
+//   Response.message = "Successfull";
+//   Response.response = LineChart;
+//   Response.success = true;
+//   return Response;
+// }
+// public ChartBar(value?: string): ApiResponse<IChart>{
+//   var Response: ApiResponse<IChart> = {} as ApiResponse<IChart>;
+//   var BarChart = new IChart();
+//   switch(value){
+//     case '1D':
+//       BarChart.DataSets = [
+//         {
+//           type: 'bar',
+//           label: 'Bar Dataset',
+//           data: [10, 20, 30, 40],
+//           borderColor: 'rgb(255, 99, 132)',
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)'
+//         }, 
+//         {
+//           type: 'line',
+//           label: "My Second dataset",
+//           fill : "rgba(255, 89, 114, 0.6)",
+//           pointBackgroundColor: "rgba(255, 89, 114, 1)",
+//           pointHoverBackgroundColor: "rgba(151,187,205,1)",
+//           borderColor: 'rgb(255, 99, 132)',
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//           data : [0,20,10,70,30,10]
+//         }
+//       ];
+//       BarChart.Labels = [
+//         'January',
+//         'February',
+//         'March',
+//         'April'
+//       ];
+//       BarChart.Options = {
+//         legend: {
+//           labels: {
+//             fontColor: 'white'
+//           }
+//         },
+//         scales: {
+//           yAxes: [{
+//             ticks: {
+//               fontColor: 'White',
+//               beginAtZero: true
+//             },
+//           }],
+//           xAxes: [{
+//             ticks: {
+//               fontColor: 'White'
+//             }
+//           }]
+//         },
+//         plugins: {
+//           title: {
+//           }
+//         }
+//       };
+//       BarChart.Type = 'bar';
+//       Response.message = 'Successfull';
+//       Response.response = BarChart;
+//       Response.success = true;
+//     break;
+//     case '7D':
+//       BarChart.DataSets = [
+//         {
+//           type: 'bar',
+//           label: 'Bar Dataset',
+//           data: [10, 20, 30, 40],
+//           borderColor: 'rgb(255, 99, 132)',
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)'
+//         }, 
+//         {
+//           type: 'line',
+//           label: "My Second dataset",
+//           fill : "rgba(255, 89, 114, 0.6)",
+//           pointBackgroundColor: "rgba(255, 89, 114, 1)",
+//           pointHoverBackgroundColor: "rgba(151,187,205,1)",
+//           borderColor: 'rgb(255, 99, 132)',
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//           data : [0,20,10,70,30,10]
+//         }
+//       ];
+//       BarChart.Labels = [
+//         'January',
+//         'February',
+//         'March',
+//         'April'
+//       ];
+//       BarChart.Options = {
+//         scales: {
+//           yAxes: [{
+//             ticks: {
+//               beginAtZero: true
+//             }
+//           }]
+//         }
+//       };
+//       BarChart.Type = 'bar';
+//       Response.message = 'Successfull';
+//       Response.response = BarChart;
+//       Response.success = true;
+//     break;
+//     case '1M':
+//       BarChart.DataSets = [
+//         {
+//           type: 'bar',
+//           label: 'Bar Dataset',
+//           data: [10, 20, 30, 40],
+//           borderColor: 'rgb(255, 99, 132)',
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)'
+//         }, 
+//         {
+//           type: 'line',
+//           label: "My Second dataset",
+//           fill : "rgba(255, 89, 114, 0.6)",
+//           pointBackgroundColor: "rgba(255, 89, 114, 1)",
+//           pointHoverBackgroundColor: "rgba(151,187,205,1)",
+//           borderColor: 'rgb(255, 99, 132)',
+//           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+//           data : [0,20,10,70,30,10]
+//         }
+//       ];
+//       BarChart.Labels = [
+//         'January',
+//         'February',
+//         'March',
+//         'April'
+//       ];
+//       BarChart.Options = {
+//         scales: {
+//           yAxes: [{
+//             ticks: {
+//               beginAtZero: true
+//             }
+//           }]
+//         }
+//       };
+//       BarChart.Type = 'bar';
+//       Response.message = 'Successfull';
+//       Response.response = BarChart;
+//       Response.success = true;
+//     break;
+//     default: 
+//       Response.message = 'Failed';
+//       Response.response = BarChart;
+//       Response.success = false;
+      
+//   }
+//   return Response;
+// }
+
+// Pie(_value?: string): ApiResponse<IChart>{
+//   var Response: ApiResponse<IChart> = {} as ApiResponse<IChart>;
+//   var Pie = new IChart();
+//   Pie.Type = 'line';
+//   Pie.Labels = ["January", "February", "March", "April", "May", "June", "July"];
+//   Pie.DataSets = [
+//     {
+//         label: "My First dataset",
+//         fillColor: "rgba(220,220,220,0.2)",
+//         strokeColor: "rgba(220,220,220,1)",
+//         pointColor: "rgba(220,220,220,1)",
+//         pointStrokeColor: "#fff",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(220,220,220,1)",
+//         data: [65, 59, 80, 81, 56, 55, 40]
+//     },
+//     {
+//         label: "My Second dataset",
+//         fillColor: "rgba(151,187,205,0.2)",
+//         strokeColor: "rgba(151,187,205,1)",
+//         pointColor: "rgba(151,187,205,1)",
+//         pointStrokeColor: "#fff",
+//         pointHighlightFill: "#fff",
+//         pointHighlightStroke: "rgba(151,187,205,1)",
+//         data: [28, 48, 40, 19, 86, 27, 90]
+//     }
+// ];
+//   Pie.Options = {
+//     legend: {
+//       labels: {
+//         fontColor: 'white'
+//       }
+//     },
+//     scales: {
+//       yAxes: [{
+//         ticks: {
+//           fontColor: 'White'
+//         },
+//       }],
+//       xAxes: [{
+//         ticks: {
+//           fontColor: 'White'
+//         }
+//       }]
+//     },
+//     tooltips: {
+//       enabled: false
+//     },
+//     plugins: {
+//       zoom: {
+//         pan: {
+//            enabled: true
+//         },
+//         zoom: {
+//            enabled: true
+//         }
+//      },
+//       datalabels: {
+//         formatter: (value: any, ctx: any) => {
+//           let sum = 0;
+//           let dataArr = ctx.chart.data.datasets[0].data;
+//           dataArr.map((data: number) => {
+//               sum += data;
+//           });
+//           let percentage = (value*100 / sum).toFixed(2)+"%";
+//           return percentage;
+//         },
+//         color: '#fff',
+//       }
+//     }
+//   };
+//   Response.message = "Successfull";
+//   Response.response = Pie;
+//   Response.success = true;
+//   return Response;
+// }
